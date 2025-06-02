@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Service Manager - Billing</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Automobile Service Manager</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="jobcards.html">Job Cards</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="billing.html" class="active">Billing</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="#" class="logout-btn">Logout</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="page-header">
+                <h2>Billing Management</h2>
+                <a href="billing-create.html" class="btn-primary">Create New Bill</a>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="billingSearch" placeholder="Search by bill ID, customer, or job card...">
+                <button class="btn-primary" id="searchBtn">Search</button>
+                <div class="filter-options">
+                    <label for="paymentStatusFilter">Payment Status:</label>
+                    <select id="paymentStatusFilter">
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="partial">Partial</option>
+                        <option value="paid">Paid</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bill ID</th>
+                            <th>Job Card</th>
+                            <th>Customer</th>
+                            <th>Bill Date</th>
+                            <th>Total Amount</th>
+                            <th>Payment Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#B2001</td>
+                            <td>#JC1003</td>
+                            <td>Michael Brown</td>
+                            <td>2023-05-27</td>
+                            <td>$249.98</td>
+                            <td><span class="status paid">Paid</span></td>
+                            <td class="actions">
+                                <a href="billing-view.html?id=2001" class="btn-view">View</a>
+                                <a href="billing-print.html?id=2001" class="btn-secondary">Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#B2002</td>
+                            <td>#JC1005</td>
+                            <td>Robert Wilson</td>
+                            <td>2023-05-26</td>
+                            <td>$199.98</td>
+                            <td><span class="status paid">Paid</span></td>
+                            <td class="actions">
+                                <a href="billing-view.html?id=2002" class="btn-view">View</a>
+                                <a href="billing-print.html?id=2002" class="btn-secondary">Print</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#B2003</td>
+                            <td>#JC1001</td>
+                            <td>John Smith</td>
+                            <td>2023-05-28</td>
+                            <td>$79.98</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td class="actions">
+                                <a href="billing-view.html?id=2003" class="btn-view">View</a>
+                                <a href="billing-edit.html?id=2003" class="btn-secondary">Edit</a>
+                                <a href="billing-payment.html?id=2003" class="btn-primary">Record Payment</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#B2004</td>
+                            <td>#JC1004</td>
+                            <td>Emily Davis</td>
+                            <td>2023-05-28</td>
+                            <td>$289.98</td>
+                            <td><span class="status partial">Partial</span></td>
+                            <td class="actions">
+                                <a href="billing-view.html?id=2004" class="btn-view">View</a>
+                                <a href="billing-edit.html?id=2004" class="btn-secondary">Edit</a>
+                                <a href="billing-payment.html?id=2004" class="btn-primary">Record Payment</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#B2005</td>
+                            <td>#JC1002</td>
+                            <td>Sarah Johnson</td>
+                            <td>2023-05-29</td>
+                            <td>$109.98</td>
+                            <td><span class="status pending">Pending</span></td>
+                            <td class="actions">
+                                <a href="billing-view.html?id=2005" class="btn-view">View</a>
+                                <a href="billing-edit.html?id=2005" class="btn-secondary">Edit</a>
+                                <a href="billing-payment.html?id=2005" class="btn-primary">Record Payment</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">Next &raquo;</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Automobile Service Manager. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="js/billing.js"></script>
+</body>
+</html>

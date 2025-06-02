@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Service Manager - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Automobile Service Manager</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Dashboard</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="jobcards.html">Job Cards</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="#" class="logout-btn">Logout</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="dashboard">
+                <h2>Dashboard</h2>
+                
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon customers-icon">
+                            <i class="icon-customers"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Customers</h3>
+                            <p class="stat-number">124</p>
+                            <p class="stat-label">Total Registered</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon vehicles-icon">
+                            <i class="icon-vehicles"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Vehicles</h3>
+                            <p class="stat-number">156</p>
+                            <p class="stat-label">Total Registered</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon jobs-icon">
+                            <i class="icon-jobs"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Jobs</h3>
+                            <p class="stat-number">18</p>
+                            <p class="stat-label">In Progress</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon revenue-icon">
+                            <i class="icon-revenue"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Revenue</h3>
+                            <p class="stat-number">$12,450</p>
+                            <p class="stat-label">This Month</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-sections">
+                    <div class="section recent-jobs">
+                        <h3>Recent Job Cards</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Job ID</th>
+                                    <th>Customer</th>
+                                    <th>Vehicle</th>
+                                    <th>Status</th>
+                                    <th>Open Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#JC1001</td>
+                                    <td>John Smith</td>
+                                    <td>2019 Toyota Camry</td>
+                                    <td><span class="status in-progress">In Progress</span></td>
+                                    <td>2023-05-28</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#JC1002</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>2020 Honda Civic</td>
+                                    <td><span class="status open">Open</span></td>
+                                    <td>2023-05-29</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#JC1003</td>
+                                    <td>Michael Brown</td>
+                                    <td>2018 Ford F-150</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td>2023-05-27</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#JC1004</td>
+                                    <td>Emily Davis</td>
+                                    <td>2021 Nissan Altima</td>
+                                    <td><span class="status in-progress">In Progress</span></td>
+                                    <td>2023-05-28</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#JC1005</td>
+                                    <td>Robert Wilson</td>
+                                    <td>2017 Chevrolet Malibu</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                    <td>2023-05-26</td>
+                                    <td><a href="#" class="btn-view">View</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="view-all">
+                            <a href="jobcards.html" class="btn-primary">View All Job Cards</a>
+                        </div>
+                    </div>
+                    
+                    <div class="section quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <a href="customers-add.html" class="btn-action">
+                                <i class="icon-add-customer"></i>
+                                <span>New Customer</span>
+                            </a>
+                            <a href="vehicles-add.html" class="btn-action">
+                                <i class="icon-add-vehicle"></i>
+                                <span>New Vehicle</span>
+                            </a>
+                            <a href="jobcards-add.html" class="btn-action">
+                                <i class="icon-add-job"></i>
+                                <span>New Job Card</span>
+                            </a>
+                            <a href="billing-add.html" class="btn-action">
+                                <i class="icon-add-bill"></i>
+                                <span>Create Bill</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Automobile Service Manager. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

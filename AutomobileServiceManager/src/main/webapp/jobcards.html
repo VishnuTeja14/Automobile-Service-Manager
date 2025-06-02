@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Service Manager - Job Cards</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Automobile Service Manager</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="jobcards.html" class="active">Job Cards</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="#" class="logout-btn">Logout</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="page-header">
+                <h2>Job Card Management</h2>
+                <a href="jobcards-add.html" class="btn-primary">Create New Job Card</a>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="jobCardSearch" placeholder="Search by job ID, customer, or vehicle...">
+                <button class="btn-primary" id="searchBtn">Search</button>
+                <div class="filter-options">
+                    <label for="statusFilter">Status:</label>
+                    <select id="statusFilter">
+                        <option value="all">All</option>
+                        <option value="open">Open</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Job ID</th>
+                            <th>Customer</th>
+                            <th>Vehicle</th>
+                            <th>Open Date</th>
+                            <th>Status</th>
+                            <th>Services</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#JC1001</td>
+                            <td>John Smith</td>
+                            <td>2019 Toyota Camry</td>
+                            <td>2023-05-28</td>
+                            <td><span class="status in-progress">In Progress</span></td>
+                            <td>Oil Change, Brake Inspection</td>
+                            <td class="actions">
+                                <a href="jobcards-view.html?id=1001" class="btn-view">View</a>
+                                <a href="jobcards-edit.html?id=1001" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="1001">Cancel</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#JC1002</td>
+                            <td>Sarah Johnson</td>
+                            <td>2020 Honda Civic</td>
+                            <td>2023-05-29</td>
+                            <td><span class="status open">Open</span></td>
+                            <td>Tire Rotation, Wheel Alignment</td>
+                            <td class="actions">
+                                <a href="jobcards-view.html?id=1002" class="btn-view">View</a>
+                                <a href="jobcards-edit.html?id=1002" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="1002">Cancel</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#JC1003</td>
+                            <td>Michael Brown</td>
+                            <td>2018 Ford F-150</td>
+                            <td>2023-05-27</td>
+                            <td><span class="status completed">Completed</span></td>
+                            <td>Engine Tune-up, Air Filter Replacement</td>
+                            <td class="actions">
+                                <a href="jobcards-view.html?id=1003" class="btn-view">View</a>
+                                <a href="billing-create.html?job=1003" class="btn-primary">Create Bill</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#JC1004</td>
+                            <td>Emily Davis</td>
+                            <td>2021 Nissan Altima</td>
+                            <td>2023-05-28</td>
+                            <td><span class="status in-progress">In Progress</span></td>
+                            <td>Brake Pad Replacement, Coolant Flush</td>
+                            <td class="actions">
+                                <a href="jobcards-view.html?id=1004" class="btn-view">View</a>
+                                <a href="jobcards-edit.html?id=1004" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="1004">Cancel</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#JC1005</td>
+                            <td>Robert Wilson</td>
+                            <td>2017 Chevrolet Malibu</td>
+                            <td>2023-05-26</td>
+                            <td><span class="status delivered">Delivered</span></td>
+                            <td>Oil Change, Transmission Service</td>
+                            <td class="actions">
+                                <a href="jobcards-view.html?id=1005" class="btn-view">View</a>
+                                <a href="billing-view.html?job=1005" class="btn-secondary">View Bill</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">Next &raquo;</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Automobile Service Manager. All rights reserved.</p>
+        </footer>
+        
+        <!-- Cancel Confirmation Modal -->
+        <div id="cancelModal" class="modal">
+            <div class="modal-content">
+                <h3>Confirm Cancellation</h3>
+                <p>Are you sure you want to cancel this job card? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button id="confirmCancel" class="btn-danger">Cancel Job</button>
+                    <button id="cancelAction" class="btn-secondary">Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/jobcards.js"></script>
+</body>
+</html>

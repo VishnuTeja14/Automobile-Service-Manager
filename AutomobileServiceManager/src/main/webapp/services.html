@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automobile Service Manager - Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Automobile Service Manager</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="customers.html">Customers</a></li>
+                    <li><a href="vehicles.html">Vehicles</a></li>
+                    <li><a href="jobcards.html">Job Cards</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="billing.html">Billing</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Welcome, Admin</span>
+                <a href="#" class="logout-btn">Logout</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="page-header">
+                <h2>Service Catalog Management</h2>
+                <a href="services-add.html" class="btn-primary">Add New Service</a>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="serviceSearch" placeholder="Search by service name or description...">
+                <button class="btn-primary" id="searchBtn">Search</button>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Service Name</th>
+                            <th>Description</th>
+                            <th>Standard Price</th>
+                            <th>Est. Hours</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Oil Change</td>
+                            <td>Change engine oil and filter</td>
+                            <td>$49.99</td>
+                            <td>0.5</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=1" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="1">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Brake Inspection</td>
+                            <td>Inspect brake pads, rotors, and fluid</td>
+                            <td>$29.99</td>
+                            <td>0.5</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=2" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="2">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tire Rotation</td>
+                            <td>Rotate tires to ensure even wear</td>
+                            <td>$19.99</td>
+                            <td>0.5</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=3" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="3">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Engine Tune-up</td>
+                            <td>Comprehensive engine maintenance</td>
+                            <td>$199.99</td>
+                            <td>2.0</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=4" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="4">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Air Filter Replacement</td>
+                            <td>Replace engine air filter</td>
+                            <td>$24.99</td>
+                            <td>0.25</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=5" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="5">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Wheel Alignment</td>
+                            <td>Align wheels to manufacturer specifications</td>
+                            <td>$89.99</td>
+                            <td>1.0</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=6" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="6">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Battery Replacement</td>
+                            <td>Replace vehicle battery</td>
+                            <td>$149.99</td>
+                            <td>0.5</td>
+                            <td class="actions">
+                                <a href="services-edit.html?id=7" class="btn-secondary">Edit</a>
+                                <a href="#" class="btn-danger" data-id="7">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">Next &raquo;</a>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Automobile Service Manager. All rights reserved.</p>
+        </footer>
+        
+        <!-- Delete Confirmation Modal -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <h3>Confirm Deletion</h3>
+                <p>Are you sure you want to delete this service? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button id="confirmDelete" class="btn-danger">Delete</button>
+                    <button id="cancelDelete" class="btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/services.js"></script>
+</body>
+</html>
